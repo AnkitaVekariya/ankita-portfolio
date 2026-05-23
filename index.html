@@ -40,6 +40,10 @@ particlesJS("particles-js", {
 </head>
 <body>
 
+<div class="scroll-bar"></div>
+
+<div class="spotlight"></div>
+
 <div class="bg-blur blur1"></div>
 <div class="bg-blur blur2"></div>
 <div class="grid-overlay"></div>
@@ -72,6 +76,7 @@ particlesJS("particles-js", {
     <div class="hero-buttons">
       <a href="#projects" class="btn-primary">View Projects</a>
       <a href="#contact" class="btn-outline">Let's Connect</a>
+      <a href="Ankita_Vekariya_Resume.pdf" download class="btn-outline">Download Resume</a>
     </div>
 
   </div>
@@ -121,17 +126,17 @@ particlesJS("particles-js", {
 <section class="stats-section">
 
   <div class="stat-card glass-card">
-    <h2>10+</h2>
+    <h2>5+</h2>
     <p>AI Projects</p>
   </div>
 
   <div class="stat-card glass-card">
-    <h2>5+</h2>
+    <h2>10+</h2>
     <p>Certifications</p>
   </div>
 
   <div class="stat-card glass-card">
-    <h2>3+</h2>
+    <h2>2</h2>
     <p>Internships</p>
   </div>
 
@@ -168,22 +173,28 @@ particlesJS("particles-js", {
 
   <div class="projects-grid">
 
-    <div class="project-card glass-card">
-      <div class="project-number">01</div>
-      <h3>AI Resume Screening System</h3>
-      <p>
-        Smart resume ranking system using SentenceTransformers,
-        semantic search & NLP-based matching.
-      </p>
+    <div class="project-card glass-card"
+onclick="window.open('https://github.com/AnkitaVekariya/resume-matcher','_blank')">
 
-      <div class="tags">
-        <span>Flask</span>
-        <span>NLP</span>
-        <span>Transformers</span>
-      </div>
-    </div>
+  <div class="project-number">01</div>
 
-    <div class="project-card glass-card">
+  <h3>AI Resume Screening System</h3>
+
+  <p>
+    Smart resume ranking system using SentenceTransformers,
+    semantic search & NLP-based matching.
+  </p>
+
+  <div class="tags">
+    <span>Flask</span>
+    <span>NLP</span>
+    <span>Transformers</span>
+  </div>
+
+</div>
+
+    <div class="project-card glass-card"
+onclick="window.open('https://github.com/AnkitaVekariya/linkedin-ai-writing-assistant','_blank')">
       <div class="project-number">02</div>
       <h3>LinkedIn AI Writing Assistant</h3>
       <p>
@@ -198,7 +209,8 @@ particlesJS("particles-js", {
       </div>
     </div>
 
-    <div class="project-card glass-card">
+    <div class="project-card glass-card"
+onclick="window.open('https://github.com/AnkitaVekariya/credit_card_fraud_detection','_blank')">
       <div class="project-number">03</div>
       <h3>Fraud Detection System</h3>
       <p>
@@ -228,10 +240,23 @@ particlesJS("particles-js", {
 
     <div class="skill-pill">Python</div>
     <div class="skill-pill">Machine Learning</div>
+    <div class="skill-pill">Supervised & Unsupervised Learning</div>
     <div class="skill-pill">Deep Learning</div>
+    <div class="skill-pill">Neural Networks</div>
+    <div class="skill-pill">CNN's</div>
+    <div class="skill-pill">RNN's</div>
     <div class="skill-pill">Generative AI</div>
+    <div class="skill-pill">RAG</div>
+    <div class="skill-pill">LangChain</div>
+    <div class="skill-pill">LSTMs</div>
+    <div class="skill-pill">NLP</div>
+    <div class="skill-pill">LLM's</div>
     <div class="skill-pill">LangChain</div>
     <div class="skill-pill">Transformers</div>
+    <div class="skill-pill">Prompt Engineering</div>
+    <div class="skill-pill">Hugging Face</div>
+    <div class="skill-pill">Vector DB</div>
+    <div class="skill-pill">Embeddings</div>
     <div class="skill-pill">Flask</div>
     <div class="skill-pill">Streamlit</div>
     <div class="skill-pill">TensorFlow</div>
@@ -255,7 +280,7 @@ particlesJS("particles-js", {
   </p>
 
   <div class="contact-buttons">
-    <a href="mailto:vekariyaankita73@gmail.com" class="btn-primary">
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vekariyaankita73@gmail.com" target="_blank" class="btn-primary">
       Email Me
     </a>
 
@@ -271,7 +296,7 @@ particlesJS("particles-js", {
 </section>
 
 <footer>
-  © 2026 Ankita Vekariya • Futuristic AI Portfolio
+  © 2026 Ankita Vekariya 
 </footer>
 
 <div class="cursor-glow"></div>
@@ -370,6 +395,38 @@ const hiddenElements = document.querySelectorAll("section");
 hiddenElements.forEach((el)=>{
   el.classList.add("hidden");
   observer.observe(el);
+});
+
+</script>
+
+<script>
+
+const spotlight = document.querySelector(".spotlight");
+
+document.addEventListener("mousemove",(e)=>{
+
+  spotlight.style.left = e.clientX + "px";
+  spotlight.style.top = e.clientY + "px";
+
+});
+
+</script>
+
+<script>
+
+window.addEventListener("scroll",()=>{
+
+  const scrollTop = document.documentElement.scrollTop;
+
+  const height =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+
+  const scrolled = (scrollTop / height) * 100;
+
+  document.querySelector(".scroll-bar").style.width =
+    scrolled + "%";
+
 });
 
 </script>

@@ -11,7 +11,7 @@ html{
 
 body{
   font-family:'Space Grotesk',sans-serif;
-  background:#050816;
+  background:radial-gradient(circle at top left,#111827,#050816 40%);
   color:white;
   overflow-x:hidden;
   position:relative;
@@ -23,6 +23,10 @@ body{
   --soft:#94A3B8;
   --glass:rgba(255,255,255,0.05);
   --border:rgba(255,255,255,0.08);
+}
+
+a{
+  text-decoration:none;
 }
 
 .grid-overlay{
@@ -163,6 +167,8 @@ nav{
   display:flex;
   gap:1rem;
   margin-top:2rem;
+  position:relative;
+  z-index:100;
 }
 
 .btn-primary,
@@ -172,6 +178,8 @@ nav{
   border-radius:100px;
   transition:0.35s;
   font-weight:500;
+  position:relative;
+  z-index:100;
 }
 
 .btn-primary{
@@ -346,6 +354,14 @@ footer{
 }
 
 /* ------------------------------------------------------------------------ */
+#particles-js,
+.cursor-glow,
+.spotlight,
+.grid-overlay,
+.bg-blur{
+  pointer-events:none;
+}
+
 #particles-js{
   position:fixed;
   width:100%;
@@ -487,6 +503,73 @@ footer{
 .show{
   opacity:1;
   transform:translateY(0);
+}
+
+.spotlight{
+  position:fixed;
+  width:600px;
+  height:600px;
+
+  background:radial-gradient(
+    circle,
+    rgba(34,211,238,0.12),
+    transparent 70%
+  );
+
+  pointer-events:none;
+  z-index:-2;
+
+  transform:translate(-50%,-50%);
+}
+
+
+.project-card::before{
+
+  content:'';
+
+  position:absolute;
+
+  inset:0;
+
+  background:linear-gradient(
+    130deg,
+    transparent,
+    rgba(255,255,255,0.08),
+    transparent
+  );
+
+  transform:translateX(-100%);
+
+  transition:0.8s;
+
+}
+
+.project-card:hover::before{
+  transform:translateX(100%);
+}
+
+.project-card{
+  overflow:hidden;
+  position:relative;
+}
+
+.scroll-bar{
+
+  position:fixed;
+
+  top:0;
+  left:0;
+
+  width:0%;
+  height:3px;
+
+  background:linear-gradient(
+    90deg,
+    #8B5CF6,
+    #22D3EE
+  );
+
+  z-index:99999;
 }
 
 /* ------------------------------------------------------------------------ */
